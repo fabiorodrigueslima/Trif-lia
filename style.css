@@ -1,0 +1,367 @@
+:root{
+  --verde:#2e7d32;
+  --verde-hover:#256628;
+  --verde-claro:#e8f5e9;
+  --cinza:#333;
+  --cinza-claro:#666;
+  --branco:#fff;
+  --sombra:0 15px 40px rgba(0,0,0,0.1);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f9fafb;
+  color:var(--cinza);
+  line-height:1.7;
+}
+
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* HEADER */
+header{
+  background:#fff;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+}
+
+.logo-topo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:bold;
+  color:var(--verde);
+}
+
+.logo-topo img{
+  height:40px;
+}
+
+/* BOTÃO */
+.btn{
+  background:var(--verde);
+  color:#fff;
+  padding:12px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  transition: background .3s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover{
+  background:var(--verde-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* HERO */
+.hero-bg{
+  position:relative;
+  background:url("../Trifólia/img/imagem-fundo.png") center/cover no-repeat;
+  padding:140px 0;
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,0.85);
+}
+
+.hero-flex{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero-logo img{
+  width:180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+
+}
+
+.hero-text h1{
+  font-size:clamp(2rem,4vw,2.8rem);
+  color:var(--verde);
+  margin-bottom:16px;
+}
+
+.hero-text p{
+  color:var(--cinza-claro);
+  margin-bottom:28px;
+}
+
+/* SEÇÕES */
+.section{
+  padding:90px 0;
+}
+
+.bg-soft{
+  background:#fff;
+}
+
+h2{
+  text-align:center;
+  color:var(--verde);
+  margin-bottom:24px;
+}
+
+.lead{
+  max-width:700px;
+  margin:auto;
+  text-align:center;
+  color:var(--cinza-claro);
+}
+
+/* SERVIÇOS */
+.services-altaloma{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.service-block{
+  background:#fff;
+  padding:40px 30px;
+  border-radius:18px;
+  box-shadow:var(--sombra);
+  transition:.3s;
+}
+.service-block h3{
+    color: var(--verde);
+}
+
+.service-block:hover{
+  transform:translateY(-6px);
+}
+
+/* CTA */
+.cta-altaloma{
+  background:linear-gradient(135deg,var(--verde),#1b5e20);
+  color:#fff;
+  text-align:center;
+  padding:100px 20px;
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.4;
+}
+
+.cta-altaloma h2{
+  color:#fff;
+}
+
+/* FORM */
+form{
+  max-width:520px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+input,
+select,
+textarea{
+  padding:14px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+input:focus,
+select:focus,
+textare:focus {
+    outline: none;
+    border-color: var(--verde);
+}
+
+textarea{
+  resize:none;
+  height:130px;
+}
+
+/* ==============================
+   FOOTER MODERNO
+   ============================== */
+footer {
+  background: linear-gradient(135deg, #0f3d2e, #1f6b4f);
+  color: #ffffff;
+  padding: 40px 20px 25px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+footer .social {
+  margin-bottom: 15px;
+}
+
+footer .social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #e6f4ef;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social a i {
+  font-size: 1.2rem;
+}
+
+footer .social a:hover {
+  color: #9be3c2;
+  transform: translateY(-2px);
+}
+
+footer p,
+footer span {
+  font-size: 0.9rem;
+  color: #d1e9df;
+}
+
+footer::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #9be3c2;
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+/* ==============================
+   FOOTER RESPONSIVO
+   ============================== */
+@media (max-width: 600px) {
+  footer {
+    padding: 30px 15px 20px;
+  }
+
+  footer .social a {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ANIMAÇÃO */
+.animate{
+  opacity:0;
+  transform:translateY(30px);
+  transition:.8s;
+}
+
+.animate.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+  .hero-flex{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .hero-logo img{
+    margin:auto;
+    width:130px;
+    height: 130px;
+  }
+}
+
+/* Como Trabalhamos */
+.process-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:30px;
+}
+
+.process-step{
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:var(--sombra);
+}
+
+.process-step span{
+  font-size:1.5rem;
+  font-weight:bold;
+  color:var(--verde);
+}
+
+.process-step h3{
+  margin:10px 0;
+  color:var(--verde);
+}
+
+/* Seção Atendemos */
+.audience-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap:20px;
+}
+
+/* Seção Perguntas Frequentes */
+.faq details{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:12px;
+  box-shadow:var(--sombra);
+  cursor:pointer;
+}
+
+.faq summary{
+  font-weight:600;
+  color:var(--verde);
+}
+
+.faq p{
+  margin-top:10px;
+  color:var(--cinza-claro);
+}
+ .tagline{
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Feedback do formulário */
+.form-feedback{
+  margin-top: 16px;
+  text-align: center;
+  color: var(--verde);
+  font-weight: 600;
+  display: none;
+}
+
+
+
+
+
