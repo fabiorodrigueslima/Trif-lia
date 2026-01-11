@@ -1,33 +1,44 @@
 /* ==================================================
    PALETA DE CORES – IDENTIDADE TRIFÓLIA
 ================================================== */
+/* ==================================================
+   PALETA DE CORES – TRIFÓLIA (WCAG AA)
+================================================== */
 :root {
-  /* Light mode */
-  --bg-main: #f7f9f8;
-  --bg-soft: #eef4f0;
-  --bg-card: #ffffff;
+  /* FUNDO */
+  --bg-main: #f7f9f8;      /* fundo principal claro */
+  --bg-soft: #eef4f0;      /* fundo secundário */
+  --bg-card: #ffffff;     /* cards */
 
-  --text-main: #2c2c2c;
-  --text-soft: #444444;
+  /* TEXTO */
+  --text-main: #1f2933;    /* texto principal (bem escuro) */
+  --text-soft: #374151;    /* texto secundário */
 
-  --green-main: #2f7d32;
-  --green-dark: #1f5f2a;
-  --green-light: #e9f3ea;
+  /* VERDES DA MARCA */
+  --green-main: #2f7d32;   /* verde principal */
+  --green-dark: #1f5f2a;   /* hover / destaque */
+  --green-light: #e6f4ea;  /* fundos suaves */
 }
 
+/* =========================
+   DARK MODE – WCAG AA
+========================= */
 body.dark {
-  /* Dark mode */
-  --bg-main: #121212;
-  --bg-soft: #1a1a1a;
-  --bg-card: #1e1e1e;
+  /* FUNDO */
+  --bg-main: #121212;      /* fundo principal */
+  --bg-soft: #1a1a1a;      /* fundo secundário */
+  --bg-card: #1f1f1f;      /* cards */
 
-  --text-main: #e0e0e0;
-  --text-soft: #cfcfcf;
+  /* TEXTO */
+  --text-main: #f5f5f5;    /* texto principal (alto contraste) */
+  --text-soft: #d1d5db;    /* texto secundário (ainda legível) */
 
-  --green-main: #66bb6a;
-  --green-dark: #4caf50;
-  --green-light: #1f3d2b;
+  /* VERDES DA MARCA (adaptados) */
+  --green-main: #6fdc8c;   /* verde mais claro p/ dark */
+  --green-dark: #4caf50;   /* hover */
+  --green-light: #163a26;  /* fundos verdes no dark */
 }
+
 
 /* ==================================================
    RESET E BASE
@@ -383,3 +394,4 @@ body,
     padding: 70px 0;
   }
 }
+
