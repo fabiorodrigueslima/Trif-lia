@@ -313,28 +313,50 @@ p {
 }
 
 /* ==================================================
-   FORMULÁRIO
+   FORMULÁRIO – ACESSIBILIDADE WCAG
 ================================================== */
-.contact-form {
-  max-width: 600px;
-  margin: 40px auto 0;
-  background-color: var(--bg-card);
-  padding: 40px;
-  border-radius: 18px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border: 2px solid #cbd5e1;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #6b7280;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--green-main);
+  box-shadow: 0 0 0 3px rgba(47, 125, 50, 0.25);
+}
+
+body.dark .contact-form input,
+body.dark .contact-form select,
+body.dark .contact-form textarea {
+  border-color: #4b5563;
+}
+
+.contact-form .erro {
+  border-color: #c62828;
+}
+
+.contact-form .sucesso {
+  border-color: #2f7d32;
+}
+
+.feedback-form {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
 
 /* ==================================================
    FOOTER
@@ -394,4 +416,171 @@ body,
     padding: 70px 0;
   }
 }
+
+/* =========================
+   LAYOUT DO FORMULÁRIO
+========================= */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+}
+
+/* Textarea maior */
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Botão centralizado */
+.contact-form button {
+  width: fit-content;
+  padding: 14px 40px;
+  justify-self: center;
+  margin-top: 10px;
+}
+
+/* =========================
+   FORMULÁRIO – LAYOUT FINAL
+========================= */
+.contact-form {
+  max-width: 700px;        /* não fica muito largo */
+  margin: 40px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* duas colunas */
+  gap: 20px;
+}
+
+/* Campos que ocupam 2 colunas */
+.contact-form textarea,
+.contact-form select,
+.contact-form button,
+.contact-form .feedback-form {
+  grid-column: span 2;
+}
+
+/* Inputs e selects */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+/* Textarea maior */
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Botão centralizado */
+.contact-form button {
+  justify-self: center;
+  padding: 14px 50px;
+  margin-top: 10px;
+}
+
+/* Texto de feedback */
+.feedback-form {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* =========================
+   RESPONSIVO – MOBILE
+========================= */
+@media (max-width: 768px) {
+  .contact-form {
+    grid-template-columns: 1fr; /* uma coluna */
+  }
+
+  .contact-form textarea,
+  .contact-form select,
+  .contact-form button,
+  .contact-form .feedback-form {
+    grid-column: span 1;
+  }
+}
+
+/* =========================
+   CARD DO FORMULÁRIO
+========================= */
+.contact-form {
+  background-color: var(--bg-card);
+  padding: 50px 45px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  border-radius: 14px;
+  border: 2px solid #d1d5db;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--green-main);
+  box-shadow: 0 0 0 4px rgba(47, 125, 50, 0.2);
+}
+.contact-form button {
+  background: linear-gradient(
+    135deg,
+    var(--green-main),
+    var(--green-dark)
+  );
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  border-radius: 999px;
+}
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(47, 125, 50, 0.35);
+}
+.feedback-form {
+  font-size: 0.95rem;
+  padding-top: 10px;
+}
+body.dark .contact-form {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .contact-form input,
+body.dark .contact-form select,
+body.dark .contact-form textarea {
+  border-color: #374151;
+}
+
+
+
+
+
+
+
+
+
 
