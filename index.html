@@ -11,6 +11,8 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="img/Logo - Trifolia.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
 </head>
 
 <body>
@@ -51,7 +53,7 @@
 
   <!-- QUEM SOMOS -->
   <section class="section">
-    <div class="container text-center">
+    <div class="container text-center" data-aos="fade-up">
       <h2>Quem somos</h2>
 
       <p class="lead">
@@ -68,11 +70,11 @@
   </section>
 
   <!-- SERVIÇOS -->
-  <section class="section bg-soft">
+  <section class="section bg-soft" data-aos="fade-up">
     <div class="container">
-      <h2 class="text-center">Nossos serviços</h2>
+      <h2 class="text-center" data-aos="fade-up">Nossos serviços</h2>
 
-      <div class="services-grid">
+      <div class="services-grid" data-aos="fade-up">
         <div class="service-card">
           <h3>Consultoria ambiental</h3>
           <p>
@@ -101,11 +103,11 @@
   </section>
 
   <!-- COMO TRABALHAMOS -->
-  <section class="section">
+  <section class="section" data-aos="fade-up">
     <div class="container">
-      <h2 class="text-center">Como trabalhamos</h2>
+      <h2 class="text-center" data-aos="fade-up">Como trabalhamos</h2>
 
-      <div class="process-grid">
+      <div class="process-grid" data-aos="fade-up">
         <div class="process-step">
           <span>01</span>
           <h3>Diagnóstico</h3>
@@ -134,11 +136,11 @@
   </section>
 
   <!-- PÚBLICO ATENDIDO -->
-  <section class="section bg-soft">
+  <section class="section bg-soft" data-aos="fade-up">
     <div class="container">
-      <h2 class="text-center">Atendemos</h2>
+      <h2 class="text-center" data-aos="fade-up">Atendemos</h2>
 
-      <div class="audience-grid">
+      <div class="audience-grid" data-aos="fade-up">
         <div class="audience-item">Empresas</div>
         <div class="audience-item">Escolas</div>
         <div class="audience-item">Instituições</div>
@@ -148,7 +150,7 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta">
+  <section class="cta" data-aos="fade-up">
     <h2>
       Sustentabilidade não é tendência.<br>
       É compromisso com o presente e o futuro.
@@ -160,14 +162,14 @@
   <!-- CONTATO -->
   <section id="contato" class="section bg-soft">
     <div class="container">
-      <h2 class="text-center">Solicitar proposta</h2>
+      <h2 class="text-center" data-aos="fade-up">Solicitar proposta</h2>
 
       <p class="text-center" style="max-width:600px; margin:0 auto 30px;">
         Preencha o formulário abaixo e entraremos em contato
         para entender sua necessidade e elaborar uma proposta.
       </p>
 
-      <form id="form-whatsapp" class="contact-form">
+      <form id="form-whatsapp" class="contact-form" data-aos="fade-up">
         <input type="text" id="nome" placeholder="Nome" required>
         <input type="email" id="email" placeholder="E-mail" required>
         <input type="tel" id="telefone" placeholder="WhatsApp">
@@ -187,9 +189,13 @@
         </select>
 
         <button type="submit" class="btn">Enviar via WhatsApp</button>
+
+        <!-- FEEDBACK -->
+        <p class="feedback-form" aria-live="polite"></p>
       </form>
     </div>
   </section>
+
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -202,7 +208,9 @@
     </a>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="index.js"></script>
+
 </body>
 
 </html>
