@@ -180,7 +180,7 @@ a {
   height: 100vh;
   background:
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("img/hero-bg.jpg") center/cover no-repeat;
+    url("img/Consutoria.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   text-align: center;
@@ -200,6 +200,9 @@ a {
 .hero p {
   font-size: 1.3rem;
   margin-bottom: 35px;
+}
+.hero-content p{
+  color: var(--bg-main);
 }
 
 /* ==================================================
