@@ -74,26 +74,46 @@ function mostrarFeedback(mensagem, tipo) {
 }
 
 // ================================
-// DARK MODE
+// DARK MODE (AUTOMÁTICO + MANUAL)
 // ================================
 const toggleTheme = document.getElementById("toggle-theme");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-// Mantém preferência salva
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
-  if (toggleTheme) toggleTheme.textContent = "☀️";
+// Verifica preferência salva
+function aplicarTemaInicial() {
+  const temaSalvo = localStorage.getItem("theme");
+
+  if (temaSalvo) {
+    document.body.classList.toggle("dark", temaSalvo === "dark");
+  } else {
+    document.body.classList.toggle("dark", prefersDarkScheme.matches);
+  }
+
+  atualizarIcone();
 }
 
+// Atualiza ícone do botão
+function atualizarIcone() {
+  if (!toggleTheme) return;
+  toggleTheme.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+}
+
+// Clique manual
 if (toggleTheme) {
   toggleTheme.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    if (document.body.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
-      toggleTheme.textContent = "☀️";
-    } else {
-      localStorage.setItem("theme", "light");
-      toggleTheme.textContent = "🌙";
-    }
+    const modoEscuroAtivo = document.body.classList.toggle("dark");
+    localStorage.setItem("theme", modoEscuroAtivo ? "dark" : "light");
+    atualizarIcone();
   });
 }
+
+// Detecta mudança no sistema (se usuário não escolheu manualmente)
+prefersDarkScheme.addEventListener("change", (e) => {
+  if (!localStorage.getItem("theme")) {
+    document.body.classList.toggle("dark", e.matches);
+    atualizarIcone();
+  }
+});
+
+// Aplica tema ao carregar
+aplicarTemaInicial();
