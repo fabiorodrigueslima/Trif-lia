@@ -181,16 +181,14 @@ prefersDarkScheme.addEventListener("change", (e) => {
 // Aplica tema ao carregar
 aplicarTemaInicial();
 
-// ================================
-// AOS – ANIMAÇÕES AO ROLAR A PÁGINA
-// ================================
 document.addEventListener("DOMContentLoaded", function () {
   if (typeof AOS !== "undefined") {
     AOS.init({
-      duration: 900,        // duração da animação
-      easing: "ease-out-cubic",
-      once: true,           // anima só uma vez
-      offset: 120           // começa um pouco antes de aparecer
+      duration: 600,
+      easing: "ease-out",
+      once: true,
+      offset: 80
     });
   }
 });
+
