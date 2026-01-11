@@ -1,6 +1,37 @@
-/* =========================
+/* ==================================================
+   PALETA DE CORES – IDENTIDADE TRIFÓLIA
+================================================== */
+:root {
+  /* Light mode */
+  --bg-main: #f7f9f8;
+  --bg-soft: #eef4f0;
+  --bg-card: #ffffff;
+
+  --text-main: #2c2c2c;
+  --text-soft: #444444;
+
+  --green-main: #2f7d32;
+  --green-dark: #1f5f2a;
+  --green-light: #e9f3ea;
+}
+
+body.dark {
+  /* Dark mode */
+  --bg-main: #121212;
+  --bg-soft: #1a1a1a;
+  --bg-card: #1e1e1e;
+
+  --text-main: #e0e0e0;
+  --text-soft: #cfcfcf;
+
+  --green-main: #66bb6a;
+  --green-dark: #4caf50;
+  --green-light: #1f3d2b;
+}
+
+/* ==================================================
    RESET E BASE
-========================= */
+================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +40,9 @@
 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
   line-height: 1.6;
-  color: #2c2c2c;
-  background-color: #f7f9f8;
 }
 
 img {
@@ -24,9 +55,9 @@ a {
   color: inherit;
 }
 
-/* =========================
+/* ==================================================
    CONTAINER
-========================= */
+================================================== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -39,17 +70,17 @@ a {
 
 .lead {
   font-size: 1.2rem;
-  color: #444;
+  color: var(--text-soft);
   margin-bottom: 20px;
 }
 
-/* =========================
+/* ==================================================
    BOTÕES
-========================= */
+================================================== */
 .btn {
   display: inline-block;
-  background: #2f7d32;
-  color: #fff;
+  background-color: var(--green-main);
+  color: #ffffff;
   padding: 14px 34px;
   border-radius: 50px;
   font-weight: bold;
@@ -57,27 +88,28 @@ a {
 }
 
 .btn:hover {
-  background: #256528;
+  background-color: var(--green-dark);
   transform: translateY(-3px);
 }
 
 .btn-light {
-  background: #ffffff;
-  color: #2f7d32;
+  background-color: var(--green-light);
+  color: var(--green-main);
 }
 
 .btn-light:hover {
-  background: #e9f3ea;
+  background-color: var(--green-main);
+  color: #ffffff;
 }
 
-/* =========================
+/* ==================================================
    HEADER
-========================= */
+================================================== */
 .header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #ffffff;
+  background-color: var(--bg-card);
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
   z-index: 1000;
 }
@@ -102,23 +134,46 @@ a {
 .logo-topo span {
   font-weight: bold;
   font-size: 0.95rem;
-  color: #2f7d32;
+  color: var(--green-main);
 }
 
-/* =========================
+/* ==================================================
+   BOTÃO DARK MODE
+================================================== */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-toggle {
+  background: transparent;
+  border: 2px solid var(--green-main);
+  color: var(--green-main);
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-toggle:hover {
+  background-color: var(--green-main);
+  color: #ffffff;
+}
+
+/* ==================================================
    HERO
-========================= */
+================================================== */
 .hero {
   height: 100vh;
-  background: linear-gradient(
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.55)
-  ),
-  url("img/hero-bg.jpg") center/cover no-repeat;
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("img/hero-bg.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
 }
 
 .hero-content {
@@ -136,26 +191,31 @@ a {
   margin-bottom: 35px;
 }
 
-/* =========================
+/* ==================================================
    SEÇÕES
-========================= */
+================================================== */
 .section {
   padding: 100px 0;
+  background-color: var(--bg-main);
 }
 
 .bg-soft {
-  background: #eef4f0;
+  background-color: var(--bg-soft);
 }
 
 .section h2 {
   font-size: 2.4rem;
   margin-bottom: 30px;
-  color: #1f3d2b;
+  color: var(--text-main);
 }
 
-/* =========================
+p {
+  color: var(--text-soft);
+}
+
+/* ==================================================
    SERVIÇOS
-========================= */
+================================================== */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -164,7 +224,7 @@ a {
 }
 
 .service-card {
-  background: #fff;
+  background-color: var(--bg-card);
   padding: 35px;
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -178,12 +238,12 @@ a {
 
 .service-card h3 {
   margin-bottom: 15px;
-  color: #2f7d32;
+  color: var(--green-main);
 }
 
-/* =========================
+/* ==================================================
    PROCESSO
-========================= */
+================================================== */
 .process-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -192,7 +252,7 @@ a {
 }
 
 .process-step {
-  background: #ffffff;
+  background-color: var(--bg-card);
   padding: 30px;
   border-radius: 16px;
   text-align: center;
@@ -203,13 +263,13 @@ a {
   display: inline-block;
   font-size: 1.6rem;
   font-weight: bold;
-  color: #2f7d32;
+  color: var(--green-main);
   margin-bottom: 10px;
 }
 
-/* =========================
+/* ==================================================
    PÚBLICO
-========================= */
+================================================== */
 .audience-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -218,7 +278,7 @@ a {
 }
 
 .audience-item {
-  background: #fff;
+  background-color: var(--bg-card);
   padding: 25px;
   text-align: center;
   border-radius: 14px;
@@ -226,16 +286,12 @@ a {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* =========================
+/* ==================================================
    CTA
-========================= */
+================================================== */
 .cta {
-  background: linear-gradient(
-    135deg,
-    #2f7d32,
-    #1f5f2a
-  );
-  color: #fff;
+  background: linear-gradient(135deg, var(--green-main), var(--green-dark));
+  color: #ffffff;
   text-align: center;
   padding: 100px 20px;
 }
@@ -245,13 +301,13 @@ a {
   margin-bottom: 30px;
 }
 
-/* =========================
+/* ==================================================
    FORMULÁRIO
-========================= */
+================================================== */
 .contact-form {
   max-width: 600px;
   margin: 40px auto 0;
-  background: #fff;
+  background-color: var(--bg-card);
   padding: 40px;
   border-radius: 18px;
   box-shadow: 0 12px 35px rgba(0,0,0,0.12);
@@ -269,16 +325,12 @@ a {
   font-size: 1rem;
 }
 
-.contact-form button {
-  margin-top: 10px;
-}
-
-/* =========================
+/* ==================================================
    FOOTER
-========================= */
+================================================== */
 .footer {
-  background: #1f3d2b;
-  color: #fff;
+  background-color: var(--green-dark);
+  color: #ffffff;
   text-align: center;
   padding: 30px 20px;
 }
@@ -287,12 +339,37 @@ a {
   display: inline-block;
   margin-top: 10px;
   font-weight: bold;
-  color: #a5d6a7;
+  color: white;
 }
 
-/* =========================
+.footer p{
+  color: white;
+}
+
+/* ==================================================
+   TRANSIÇÃO SUAVE
+================================================== */
+body,
+.header,
+.section,
+.bg-soft,
+.service-card,
+.process-step,
+.audience-item,
+.contact-form,
+.footer,
+.btn,
+.btn-toggle {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* ==================================================
    RESPONSIVO
-========================= */
+================================================== */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.4rem;
@@ -306,85 +383,3 @@ a {
     padding: 70px 0;
   }
 }
-
-/* =========================
-   BOTÃO DARK MODE
-========================= */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.btn-toggle {
-  background: transparent;
-  border: 2px solid #2f7d32;
-  color: #2f7d32;
-  padding: 10px 14px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-toggle:hover {
-  background: #2f7d32;
-  color: #ffffff;
-}
-
-/* =========================
-   DARK MODE
-========================= */
-body.dark {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark .header {
-  background: #1e1e1e;
-}
-
-body.dark .section {
-  background: #121212;
-}
-
-body.dark .bg-soft {
-  background: #1a1a1a;
-}
-
-body.dark h1,
-body.dark h2,
-body.dark h3 {
-  color: #e0e0e0;
-}
-
-body.dark p {
-  color: #cfcfcf;
-}
-
-/* Cards */
-body.dark .service-card,
-body.dark .process-step,
-body.dark .audience-item,
-body.dark .contact-form {
-  background: #1e1e1e;
-  box-shadow: none;
-}
-
-/* Footer */
-body.dark .footer {
-  background: #000;
-}
-
-/* Botão */
-body.dark .btn {
-  background: #4caf50;
-  color: #000;
-}
-
-body.dark .btn-toggle {
-  border-color: #ffffff;
-  color: #ffffff;
-}
-
-
